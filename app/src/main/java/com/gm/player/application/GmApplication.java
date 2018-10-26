@@ -119,7 +119,6 @@ public class GmApplication extends LitePalApplication {
                 .restartActivity(WelcomeActivity.class)
                 .errorActivity(ErrorActivity.class)
                 .apply();
-
     }
     public boolean isScreenFlag() {
         return screenFlag;

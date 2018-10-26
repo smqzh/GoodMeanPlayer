@@ -96,6 +96,7 @@ public class GmApplication extends LitePalApplication {
         });
     }
 
+
     /**
      * 检查腾讯浏览服务需要的文件夹是否存在
      */

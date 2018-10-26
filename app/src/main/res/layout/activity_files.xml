@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
+
+        <com.gm.player.widget.TbsWordView
+            android:id="@+id/tbsView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            />
+    </ScrollView>
+
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/multiple_actions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        fab:fab_addButtonColorNormal="@color/white"
+        fab:fab_addButtonColorPressed="@color/white_pressed"
+        fab:fab_addButtonSize="mini"
+        fab:fab_addButtonPlusIconColor="@color/half_black"
+        fab:fab_expandDirection="up"
+        android:visibility="gone"
+        fab:fab_labelStyle="@style/menu_labels_style"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp">
+
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button_remove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_file_back"
+            fab:fab_colorNormal="@color/white"
+            fab:fab_colorPressed="@color/white_pressed"
+            fab:fab_title="返回"/>
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+
+    <LinearLayout
+        android:id="@+id/line_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        >
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/avl_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:indicator="BallSpinFadeLoader"
+            app:indicator_color="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/tvSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:text="@string/loading"
+            />
+    </LinearLayout>
+</RelativeLayout>

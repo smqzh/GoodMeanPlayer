@@ -1,0 +1,69 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.gm.player"
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //X5兼容64位手机
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    compile 'com.android.support:design:27.1.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation project(':module_download')
+    // butterknife
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    compile 'com.github.ozodrukh:CircularReveal:1.0.4'
+    implementation files('libs/tbs_sdk_thirdapp_v3.5.0.1004_43500_sharewithdownload_withoutGame_obfs_20170801_113025.jar')
+    compile 'com.getbase:floatingactionbutton:1.10.1'
+    // Glide
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    //BaseRecyclerViewAdapterHelper
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.18'
+    //加载动画
+    compile 'com.wang.avi:library:1.0.0'
+    compile 'com.nineoldandroids:library:2.4.0'
+    //轮播图片
+    compile 'com.youth.banner:banner:1.4.8'
+    // LitePal
+    compile 'org.litepal.android:core:1.6.0'
+    //自定义异常页面
+    compile 'cat.ereza:customactivityoncrash:2.1.0'
+    implementation project(':module_base')
+    implementation project(':module_vitamio')
+    //进度条 seekbar
+    compile 'org.adw.library:discrete-seekbar:1.0.1'
+    //带进度的按钮
+    compile 'cn.weidongjian.android:progress-button:0.2'
+    compile 'com.nightonke:boommenu:2.1.1'
+    //内存检测
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.1'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+    //分包配置
+    compile 'com.android.support:multidex:1.0.2'
+    implementation project(':im')
+    implementation files('libs/olivephone-sdk-ppt-android-1.6-universial-trial-1.0.0.jar')
+    implementation files('libs/poi-3.15.jar')
+}

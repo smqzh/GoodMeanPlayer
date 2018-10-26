@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:focusable="true"
+    android:layout_gravity="center"
+    >
+    <ImageView
+        android:id="@+id/iv_info"
+        android:layout_width="180px"
+        android:layout_height="160px"
+        />
+
+    <com.gm.player.widget.ScrollingTextView
+        android:id="@+id/tv_video_info"
+        android:layout_width="180px"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:gravity="center"
+        android:text="地道战"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+</LinearLayout>
+

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/content_overlay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"/>
+
+
+    <LinearLayout
+        android:id="@+id/line_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@color/main"
+        >
+
+        <com.gm.player.widget.FocusLinearLayout
+            android:id="@+id/index"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="12dp"
+            android:focusable="true"
+            android:nextFocusRight="@+id/files"
+            android:nextFocusLeft="@+id/about"
+            >
+            <ImageView
+                android:id="@+id/ivIndex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_index"
+                />
+
+            <TextView
+                android:id="@+id/tvIndex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:text="首页"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:typeface="monospace" />
+        </com.gm.player.widget.FocusLinearLayout>
+
+
+
+        <com.gm.player.widget.FocusLinearLayout
+            android:id="@+id/files"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="12dp"
+            android:focusable="true"
+            android:nextFocusLeft="@id/index"
+            android:nextFocusRight="@+id/setting"
+            >
+            <ImageView
+                android:id="@+id/ivFiles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_files"
+                />
+            <TextView
+                android:id="@+id/tvFiles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:text="文件"
+                android:layout_marginLeft="4dp"
+                />
+        </com.gm.player.widget.FocusLinearLayout>
+
+
+        <com.gm.player.widget.FocusLinearLayout
+            android:id="@+id/setting"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="12dp"
+            android:focusable="true"
+            android:nextFocusRight="@+id/about"
+            android:nextFocusLeft="@id/files"
+            >
+            <ImageView
+                android:id="@+id/ivSetting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_setting"
+                />
+            <TextView
+                android:id="@+id/tvSetting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:text="设置"
+                android:layout_marginLeft="4dp"
+                />
+        </com.gm.player.widget.FocusLinearLayout>
+
+        <com.gm.player.widget.FocusLinearLayout
+            android:id="@+id/about"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="12dp"
+            android:focusable="true"
+            android:nextFocusRight="@id/index"
+            android:nextFocusLeft="@id/setting"
+            >
+            <ImageView
+                android:id="@+id/ivAbout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_about"
+                />
+            <TextView
+                android:id="@+id/tvAbout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:text="关于"
+                android:layout_marginLeft="4dp"
+                />
+        </com.gm.player.widget.FocusLinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

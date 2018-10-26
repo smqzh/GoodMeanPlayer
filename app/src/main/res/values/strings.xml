@@ -1,0 +1,53 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">智能播放器</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="drawer_open">开启</string>
+    <string name="drawer_close">关闭</string>
+    <string name="build_base">基本配置</string>
+    <string name="build_local_ip">本地IP地址：</string>
+    <string name="build_local_port">本地监听端口：</string>
+    <string name="build_remote_ip">服务端IP地址：</string>
+    <string name="build_remote_port">服务端监听端口：</string>
+    <string name="build_screen_protect">屏保类型：</string>
+    <string name="build_select_file">选择屏保文件：</string>
+    <string name="build_screen_default">等待：</string>
+    <string name="build_screen_time">秒钟,开始屏保</string>
+    <string name="build_device_number">展项名称：</string>
+    <!-- 文件合集-->
+    <string name="file_area">文件浏览</string>
+    <string name="file_type">选择文件类型：</string>
+    <string name="file_key">关键字：</string>
+
+    <!--下载-->
+    <string name="download_list">下载列表</string>
+    <string name="lg_moreExit">再按一次退出程序</string>
+    <string name="default_primary_folder">/mnt</string>
+    <string name="preference_title">常规设置</string>
+    <string name="pref_primary_folder">主页文件夹</string>
+    <string name="pref_read_root">读取根目录</string>
+    <string name="pref_show_real_path">显示真实路径</string>
+    <string name="pref_primary_folder_summary">程序启动时显示的文件夹，当前路径为<xliff:g id="string">%1$s</xliff:g></string>
+    <string name="pref_show_real_path_summary">在导航栏中显示真实路径</string>
+
+    <string name="loading">正在加载...</string>
+
+    <!--ErrorActivity-->
+    <string name="customactivityoncrash_error_activity_close_app">关闭app</string>
+    <string name="customactivityoncrash_error_activity_error_details">错误的详细信息</string>
+    <string name="customactivityoncrash_error_activity_error_details_clipboard_label">错误的信息</string>
+    <string name="customactivityoncrash_error_activity_error_details_close">关闭</string>
+    <string name="customactivityoncrash_error_activity_error_details_copied">Copied to clipboard</string>
+    <string name="customactivityoncrash_error_activity_error_details_copy">复制到剪贴板</string>
+    <string name="customactivityoncrash_error_activity_error_details_title">错误详细信息</string>
+    <string name="customactivityoncrash_error_activity_error_occurred_explanation">发生意外错误,对不起给您带来不便.</string>
+    <string name="customactivityoncrash_error_activity_restart_app">重启</string>
+    <string name="customactivityoncrash_error_activity_tell_us">请联系我们的管理员</string>
+
+    <!--关于-->
+    <string name="about_info">版本信息</string>
+    <string name="about_current">版本号</string>
+    <string name="about_copyright">版权所有</string>
+    <string name="about_check">检查更新</string>
+    <string name="about_clear">清空缓存</string>
+</resources>

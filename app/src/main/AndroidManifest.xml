@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gm.player"
+    android:installLocation="internalOnly"
+    >
+
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- 获取sd卡写的权限，用于文件上传和下载 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.INJECT_EVENTS"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:name=".application.GmApplication"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.activity.WelcomeActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="screenSize|keyboardHidden|orientation"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ui.activity.IndexActivity"
+            android:screenOrientation="landscape"
+            android:launchMode="singleTask"
+            android:configChanges="screenSize|keyboardHidden|orientation"
+            />
+        <activity android:name=".ui.activity.FileDisplayActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="screenSize|keyboardHidden|orientation"
+            />
+        <activity android:name=".ui.activity.PowerPointActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="screenSize|keyboardHidden|orientation"
+            />
+        <activity android:name=".ui.activity.VideoActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="screenSize|keyboardHidden|orientation"
+            />
+        <activity android:name=".ui.activity.ImageActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="screenSize|keyboardHidden|orientation"
+            />
+
+        <activity android:name=".ui.activity.WebActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="screenSize|keyboardHidden|orientation"
+            />
+        <activity android:name=".ui.activity.ControllActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="screenSize|keyboardHidden|orientation"
+            />
+        <activity android:name=".ui.activity.ErrorActivity"
+            android:screenOrientation="landscape"
+            android:launchMode="singleTask"
+            android:configChanges="screenSize|keyboardHidden|orientation"
+            />
+
+        <service android:name="com.learning.downloader.FilesDownloadService">
+            <intent-filter>
+                <action android:name="com.learning.downloader.DOWNLOAD_SERVICE" />
+            </intent-filter>
+        </service>
+       <service android:name=".service.SuperSocket"/>
+        <!--开机广播接受者-->
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.gm.player.fileprovider"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- 开机自启动广播接受 -->
+        <receiver android:name=".service.AutoStartBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.HOME"/>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

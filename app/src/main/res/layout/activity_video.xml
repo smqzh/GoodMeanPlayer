@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <io.vov.vitamio.widget.VideoView
+            android:id="@+id/videoplayer"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/line_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        >
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/avl_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:indicator="BallSpinFadeLoader"
+            app:indicator_color="@color/white"
+            />
+
+        <TextView
+            android:id="@+id/tvSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            android:text="@string/loading"
+            />
+    </LinearLayout>
+
+    <!--<ImageView-->
+        <!--android:id="@+id/iv_logo"-->
+        <!--android:layout_width="100dp"-->
+        <!--android:layout_height="45dp"-->
+        <!--android:src="@drawable/logo"-->
+        <!--android:layout_margin="10dp"-->
+        <!--/>-->
+
+</FrameLayout>

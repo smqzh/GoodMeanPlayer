@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        >
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/rel_building"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="100dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+
+                >
+
+                <LinearLayout
+                    android:id="@+id/lt_base"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/main"
+                    android:orientation="vertical"
+
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        >
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/icon_build"
+                            android:padding="10dp"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/build_base"
+                            android:textSize="20sp"
+                            android:textColor="@color/white"
+                            />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.7dp"
+                        android:background="@color/bg_fragment"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:orientation="horizontal"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="5dp"
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/build_local_ip"
+                                android:textSize="16sp"
+                                android:textColor="@color/white"
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_build_ip"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="192.168.1.46"
+                                android:textSize="16sp"
+                                android:textColor="@color/white"
+                                />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/build_local_port"
+                                android:textSize="16sp"
+                                android:textColor="@color/white"
+                                />
+
+                            <EditText
+                                android:id="@+id/et_build_port"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="8801"
+                                android:textSize="16sp"
+                                android:textColor="@color/white"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.7dp"
+                        android:background="@color/bg_fragment"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:orientation="horizontal"
+                        >
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="5dp"
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/build_remote_ip"
+                                android:textSize="16sp"
+                                android:textColor="@color/white"
+                                />
+
+                            <EditText
+                                android:id="@+id/et_build_remote_ip"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="20dp"
+                                android:text="192.168.1.46"
+                                android:textSize="16sp"
+                                android:textColor="@color/white"
+                                />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/build_remote_port"
+                                android:textSize="16sp"
+                                android:textColor="@color/white"
+                                />
+
+                            <EditText
+                                android:id="@+id/et_build_remote_port"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="8802"
+                                android:textSize="16sp"
+                                android:textColor="@color/white"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.7dp"
+                        android:background="@color/bg_fragment"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="5dp"
+
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/build_screen_default"
+                                android:textSize="16sp"
+                                android:textColor="@color/white"
+                                />
+
+                            <EditText
+                                android:id="@+id/et_protect_time"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:textSize="16sp"
+                                android:textColor="@color/white"
+                                android:text="30"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/build_screen_time"
+                                android:textSize="16sp"
+                                android:textColor="@color/white"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="5dp"
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/build_device_number"
+                                android:textSize="16sp"
+                                android:textColor="@color/white"
+                                />
+
+                            <EditText
+                                android:id="@+id/et_build_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="20dp"
+                                android:textColor="@color/white"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.7dp"
+                        android:background="@color/bg_fragment"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        >
+
+                     <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|left"
+                        android:layout_height="wrap_content"
+                         android:paddingLeft="5dp"
+                         >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="视频平铺状态："
+                            android:textColor="@color/white"
+
+                            />
+
+                        <Button
+                            android:id="@+id/button_state"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="拉伸"
+                            android:focusable="true"
+                            android:background="@drawable/button_click"
+                            />
+                         <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:text="旋转角度："
+                             android:textColor="@color/white"
+                              android:layout_marginLeft="15dp"
+                             />
+
+                         <Button
+                             android:id="@+id/button_rotation"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:text="90°"
+                             android:focusable="true"
+                             android:background="@drawable/button_click"
+                             />
+                    </LinearLayout>
+
+                   <LinearLayout
+                       android:layout_width="0dp"
+                       android:layout_weight="1"
+                       android:gravity="center_vertical|right"
+                       android:layout_height="wrap_content">
+
+                       <Button
+                           android:id="@+id/button_switch"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="横竖屏切换"
+                           android:focusable="true"
+                           android:background="@drawable/button_click"
+                           android:layout_marginRight="20dp"
+                           />
+                       <!--   <Button
+                              android:id="@+id/button_listen"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="重连服务器"
+                              android:background="@drawable/button_click"
+                              android:layout_marginRight="20dp"
+                              />-->
+                       <Button
+                           android:id="@+id/button_save"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="保存"
+                           android:focusable="true"
+                           android:background="@drawable/button_click"
+                           android:layout_marginRight="5dp"
+                           />
+
+                   </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <com.getbase.floatingactionbutton.FloatingActionsMenu
+                    android:id="@+id/multiple_actions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:visibility="gone"
+                    fab:fab_addButtonColorNormal="@color/white"
+                    fab:fab_addButtonColorPressed="@color/white_pressed"
+                    fab:fab_addButtonSize="mini"
+                    fab:fab_addButtonPlusIconColor="@color/half_black"
+                    fab:fab_expandDirection="up"
+                    fab:fab_labelStyle="@style/menu_labels_style">
+
+                    <com.getbase.floatingactionbutton.FloatingActionButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_save"
+                        fab:fab_addButtonSize="mini"
+                        fab:fab_colorNormal="@color/white"
+                        fab:fab_colorPressed="@color/white_pressed"
+                        fab:fab_colorDisabled="@color/white"
+                        fab:fab_title="横竖屏切换"/>
+
+                    <com.getbase.floatingactionbutton.FloatingActionButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_listen"
+                        fab:fab_addButtonSize="mini"
+                        fab:fab_colorNormal="@color/white"
+                        fab:fab_colorPressed="@color/white_pressed"
+                        fab:fab_colorDisabled="@color/white"
+                        android:visibility="visible"
+                        fab:fab_title="重连服务器"/>
+
+                    <com.getbase.floatingactionbutton.FloatingActionButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_save"
+                        fab:fab_addButtonSize="mini"
+                        fab:fab_colorNormal="@color/white"
+                        fab:fab_colorPressed="@color/white_pressed"
+                        fab:fab_colorDisabled="@color/white"
+                        fab:fab_title="保存"/>
+
+                </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+            </RelativeLayout>
+        </FrameLayout>
+    </LinearLayout>
+</ScrollView>

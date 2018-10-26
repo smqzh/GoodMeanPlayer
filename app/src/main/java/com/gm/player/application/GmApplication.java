@@ -68,7 +68,6 @@ public class GmApplication extends LitePalApplication {
     public ActivityManager getActivityManager() {
         return activityManager;
     }
-
     public void setActivityManager(ActivityManager activityManager) {
         this.activityManager = activityManager;
     }
@@ -81,7 +80,6 @@ public class GmApplication extends LitePalApplication {
         YcSpUtil.getInstance().init(getApplicationContext());
     }
     private void initTbs(){
-
         checkTbsReaderTemp();
         // 初始化tbs腾讯浏览服务（https://x5.tencent.com/tbs/index.html）
         QbSdk.setDownloadWithoutWifi(true);

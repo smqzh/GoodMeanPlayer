@@ -64,18 +64,15 @@ public class GmApplication extends LitePalApplication {
         }
         LeakCanary.install(this);
     }
-
     public ActivityManager getActivityManager() {
         return activityManager;
     }
     public void setActivityManager(ActivityManager activityManager) {
         this.activityManager = activityManager;
     }
-
     private void initYcToast() {
         YcToast.get().init(getApplicationContext());
     }
-
     private void initYcSp() {
         YcSpUtil.getInstance().init(getApplicationContext());
     }
@@ -127,7 +124,6 @@ public class GmApplication extends LitePalApplication {
     public boolean isScreenFlag() {
         return screenFlag;
     }
-
     public void setScreenFlag(boolean screenFlag) {
         this.screenFlag = screenFlag;
     }

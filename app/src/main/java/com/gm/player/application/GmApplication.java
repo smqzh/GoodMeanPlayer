@@ -107,6 +107,8 @@ public class GmApplication extends LitePalApplication {
         }
     }
 
+
+
     private void initCatchException(){
         //全局异常处理
         CaocConfig.Builder.create()

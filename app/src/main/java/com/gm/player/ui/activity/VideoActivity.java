@@ -227,8 +227,6 @@ public class VideoActivity extends BaseActivity {
         }
     }
 
-    
-
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onMessageFinishEvent(DownloadSuccessEvent event) {

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Binder;
 import android.os.Handler;
 import android.os.IBinder;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -42,6 +43,7 @@ public class SuperSocket extends Service implements HeartEngine {
 
     public String from;
     private boolean flagBrocast=true;
+
     //是否有网络标志
     public boolean mark=true;
     // private NetReceiver netChange;
@@ -61,7 +63,7 @@ public class SuperSocket extends Service implements HeartEngine {
 
     //发送心跳包
     public void sendHeartBeat(){
-        Log.d(TAG, "sendHeartBeat: -----发送心跳包");
+      //  Log.d(TAG, "sendHeartBeat: -----发送心跳包");
         socket.getHeartBeatHelper().setHeartBeatInterval(8 * 1000);
         socket.getHeartBeatHelper().setSendHeartBeatEnabled(true); // 设置允许自动发送心跳包，此值默认为false
         String num= MySp.getDeviceNumber()+"TT~TT0TT~TT300TT~TT心跳包XX~XX";
@@ -195,7 +197,7 @@ public class SuperSocket extends Service implements HeartEngine {
     //注册回调信息
     private void registerSocket(){
 
-        Log.d(TAG, "registerSocket: ------注册回调信息");
+     //   Log.d(TAG, "registerSocket: ------注册回调信息");
         socket.registerSocketClientDelegate(new SocketClientDelegate() {
             /**
              * 连接上远程端时的回调
@@ -237,6 +239,7 @@ public class SuperSocket extends Service implements HeartEngine {
             public void onResponse(final SocketClient client, @NonNull SocketResponsePacket responsePacket) {
                 byte[] data = responsePacket.getData(); // 获取接收的byte数组，不为null
                 // String message = responsePacket.getMessage(); // 获取按默认设置的编码转化的String，可能为null
+
             }
         });
 
@@ -299,8 +302,11 @@ public class SuperSocket extends Service implements HeartEngine {
              */
             @Override
             public void onReceivePacketEnd(SocketClient client, SocketResponsePacket packet) {
-                Log.d(TAG, "onReceivePacketEnd: -----end");
-                dispatcherTask(packet.getData());
+             //   Log.d(TAG, "onReceivePacketEnd: -----end");
+                Message msg=new Message();
+                msg.obj=packet.getData();
+                msg.what=0;
+                mHandler.sendMessage(msg);
             }
 
             /**
@@ -325,6 +331,24 @@ public class SuperSocket extends Service implements HeartEngine {
             }
         });
     }
+
+    private Handler mHandler=new Handler(){
+
+        @Override
+        public void handleMessage(Message msg) {
+
+            switch (msg.what){
+                case 0:
+                    dispatcherTask((byte[])msg.obj);
+                    break;
+            }
+        }
+    };
+
+
+
+
+
 
     // 发送数据任务
     private  void sendMessage(byte[] message) {
@@ -357,7 +381,7 @@ public class SuperSocket extends Service implements HeartEngine {
                     }
                     if(!obj.equals("")){
                         InfoMessageEvent info=null;
-                        Log.d(TAG, "dispatcherTask: ------tt3"+tt[3]+"-----obj"+obj);
+                     //   Log.d(TAG, "dispatcherTask: ------tt3"+tt[3]+"-----obj"+obj);
                         if(tt[3].equals("Default")||tt[3].equals("default")){
                             info=new InfoMessageEvent("zuhe",obj,"0","0");
                         }else{
@@ -421,8 +445,7 @@ public class SuperSocket extends Service implements HeartEngine {
                     }
                 }
             }
-            Log.d(TAG, "dispatcherTask: ------"+msg);
-        } catch (UnsupportedEncodingException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

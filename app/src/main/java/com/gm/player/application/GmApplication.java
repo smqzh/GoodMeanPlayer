@@ -38,7 +38,7 @@ public class GmApplication extends LitePalApplication {
         super.onCreate();
         instance=this;
         Vitamio.isInitialized(getApplicationContext());//加载Vitamio
-        initTbs();//加载腾讯tbs
+      //  initTbs();//加载腾讯tbs
         initYcSp();//加载sharePreference
         initYcToast();
         isBuildN();

@@ -53,10 +53,10 @@ public class PController {
 
     public void run(){
         index=0;
-        Log.d(TAG, "run: -------------zuhe:"+zuhe);
+     //   Log.d(TAG, "run: -------------zuhe:"+zuhe);
         String zh[]=zuhe.split(",");
         zsize=zh.length;
-        Log.d(TAG, "run: ------size"+zsize);
+    //    Log.d(TAG, "run: ------size"+zsize);
         zurl=new String[zsize];
         ztime=new int[zsize];
          if(zsize==1){
